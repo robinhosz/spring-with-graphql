@@ -1,6 +1,7 @@
+scalar Timestamp
+
 type Query {
 
-    hello:String
 }
 
 type Mutation {

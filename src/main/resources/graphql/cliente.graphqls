@@ -1,7 +1,10 @@
+
+
 type Cliente {
     id:ID!
     nome:String
     email:String
+    createdAt: Timestamp!
 }
 
 input ClienteInput {

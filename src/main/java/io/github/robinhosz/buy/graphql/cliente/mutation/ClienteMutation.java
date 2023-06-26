@@ -8,6 +8,8 @@ import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.stereotype.Controller;
 
+import java.sql.Timestamp;
+
 @Controller
 public class ClienteMutation {
 
@@ -20,6 +22,7 @@ public class ClienteMutation {
         Cliente clienteEntity = Cliente.builder()
                 .nome(cliente.getNome())
                 .email(cliente.getEmail())
+                .createdAt(new Timestamp(System.currentTimeMillis()))
                 .build();
         return clienteService.saveCliente(clienteEntity);
     }
