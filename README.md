@@ -9,7 +9,7 @@ Simple project using I did query and mutations with graphql in spring boot, I al
 ## 🔧 Technologies
 
 - [Java](https://www.java.com/pt-BR/)
-- [Spring Boot]([https://quarkus.io/](https://spring.io/projects/spring-boot))
+- [Spring Boot](https://quarkus.io/](https://spring.io/projects/spring-boot)
 - [GraphQL](https://graphql.org/)
 - [MySQL](https://www.mysql.com/)
 
