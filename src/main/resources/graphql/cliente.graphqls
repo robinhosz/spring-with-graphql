@@ -14,7 +14,7 @@ input ClienteInput {
 }
 
 extend type Query {
-    getClienteById(id:ID!):Cliente
+    getClienteById(id:ID):Cliente
 
     findAllClientes:[Cliente]!
 

@@ -1,6 +1,7 @@
 package io.github.robinhosz.buy.services;
 
 import io.github.robinhosz.buy.entities.Cliente;
+import io.github.robinhosz.buy.graphql.exceptions.EmailNotFoundException;
 import io.github.robinhosz.buy.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,9 @@ public class ClienteService {
 
     @Transactional
     public Cliente saveCliente(Cliente cliente) {
+
+        validationEmail(cliente);
+
         return clienteRepository.save(cliente);
     }
 
@@ -35,5 +39,15 @@ public class ClienteService {
             return true;
         }
         return false;
+    }
+
+    public void validationEmail(Cliente cliente) {
+        List<Cliente> clientes = findAllClientes();
+
+        clientes.forEach(c -> {
+            if(cliente.getEmail().equals(c.getEmail())) {
+                throw new EmailNotFoundException("Email já cadastrado");
+            }
+        });
     }
 }

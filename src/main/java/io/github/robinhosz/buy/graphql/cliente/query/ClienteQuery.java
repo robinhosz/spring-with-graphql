@@ -15,12 +15,6 @@ public class ClienteQuery {
     @Autowired
     private ClienteService clienteService;
 
-
-    @QueryMapping
-    public String hello() {
-        return "Hello";
-    }
-
     @QueryMapping
     public Cliente getClienteById(@Argument Long id) {
         return clienteService.getClienteById(id);
